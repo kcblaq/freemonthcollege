@@ -1,8 +1,38 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import {Box,Typography} from '@mui/material'
 import logo from '../logo.png'
 import Passport from '../Passport.png'
 import { makeStyles } from '@material-ui/core'
+import TableDetail from './TableDetail'
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+      backgroundColor: '#0D7590',
+      color: theme.palette.common.white,
+    },
+    [`&.${tableCellClasses.body}`]: {
+      fontSize: 14,
+    },
+  }));
+  
+  const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+    // hide last border
+    '&:last-child td, &:last-child th': {
+      border: 0,
+    },
+  }));
 
 
 const useStyles = makeStyles({
@@ -25,8 +55,20 @@ const data ={
     session: '2022/2023 Session'
 
 }
-
+const headings = [
+    'SN','Course Code','Course Title','Unit','Grade','Total point'
+]
 export default function DownloadProfile() {
+const [detail, setDetail] = useState([])
+const [id] = useState(0)
+    useEffect(() => {
+		fetch(`https://testapiomniswift.herokuapp.com/api/viewResult/${id}`)
+			.then((res) => res.json())
+			.then((result) => {
+				setDetail(result.data.students);
+			});
+	}, []);
+
     const classes = useStyles();
   return (
     <Box sx={{minHeight:'100vh', display:'flex', width:'100vw', 
@@ -65,6 +107,37 @@ export default function DownloadProfile() {
            </Box>
 
        </Box>
+      <Box>
+      <Box sx={{mt:4}}>
+        <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 700 , overflow:'scroll'}} >
+        <TableHead>
+          <TableRow>
+
+            {headings.map((heading) =>
+                <StyledTableCell>{heading}</StyledTableCell> )}
+            
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {/* {data.map((row) => (
+            <StyledTableRow key={row.name}>
+              <StyledTableCell component="th" scope="row">
+                {row.id}
+              </StyledTableCell>
+              <StyledTableCell align="right">{row.result.coursecode}</StyledTableCell>
+              <StyledTableCell align="right">{row.result.title}</StyledTableCell>
+              <StyledTableCell align="right">{row.result.credit_unit}</StyledTableCell>
+              <StyledTableCell align="right">{row.result.grade}</StyledTableCell>
+              <StyledTableCell align="right">{row.result.total_point}</StyledTableCell>
+            </StyledTableRow>
+          ))} */}
+        </TableBody>
+      </Table>
+    </TableContainer>
+   </Box>
+          
+      </Box>
 
     </Box>
   )

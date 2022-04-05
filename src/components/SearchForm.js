@@ -230,7 +230,6 @@ export default function SearchForm() {
 												variant="contained"
 												sx={{ backgroundColor: 'green' }}
 												onClick={DownloadProfile}>
-												{' '}
 												Download
 											</Button>
 										</TableCell>
