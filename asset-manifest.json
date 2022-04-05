@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.b243812b.css",
+    "main.js": "/react-gh-pages/static/js/main.6891b94e.js",
+    "static/js/787.05e96382.chunk.js": "/react-gh-pages/static/js/787.05e96382.chunk.js",
+    "static/media/Passport.png": "/react-gh-pages/static/media/Passport.49ad813628289878d7fd.png",
+    "index.html": "/react-gh-pages/index.html",
+    "main.b243812b.css.map": "/react-gh-pages/static/css/main.b243812b.css.map",
+    "main.6891b94e.js.map": "/react-gh-pages/static/js/main.6891b94e.js.map",
+    "787.05e96382.chunk.js.map": "/react-gh-pages/static/js/787.05e96382.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b243812b.css",
+    "static/js/main.6891b94e.js"
+  ]
+}
