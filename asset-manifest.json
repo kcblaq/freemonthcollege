@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.b243812b.css",
-    "main.js": "/static/js/main.cae328cf.js",
-    "static/js/787.05e96382.chunk.js": "/static/js/787.05e96382.chunk.js",
-    "static/media/Passport.png": "/static/media/Passport.49ad813628289878d7fd.png",
-    "index.html": "/index.html",
-    "main.b243812b.css.map": "/static/css/main.b243812b.css.map",
-    "main.cae328cf.js.map": "/static/js/main.cae328cf.js.map",
-    "787.05e96382.chunk.js.map": "/static/js/787.05e96382.chunk.js.map"
+    "main.css": "/freemonthcollege/static/css/main.b243812b.css",
+    "main.js": "/freemonthcollege/static/js/main.a1bd4173.js",
+    "static/js/787.05e96382.chunk.js": "/freemonthcollege/static/js/787.05e96382.chunk.js",
+    "static/media/Passport.png": "/freemonthcollege/static/media/Passport.49ad813628289878d7fd.png",
+    "index.html": "/freemonthcollege/index.html",
+    "main.b243812b.css.map": "/freemonthcollege/static/css/main.b243812b.css.map",
+    "main.a1bd4173.js.map": "/freemonthcollege/static/js/main.a1bd4173.js.map",
+    "787.05e96382.chunk.js.map": "/freemonthcollege/static/js/787.05e96382.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b243812b.css",
-    "static/js/main.cae328cf.js"
+    "static/js/main.a1bd4173.js"
   ]
 }
