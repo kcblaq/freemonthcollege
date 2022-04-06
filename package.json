@@ -1,7 +1,7 @@
 {
   "name": "fremontcollege",
   "version": "0.1.0",
-  "homepage": "https://kcblaq.github.io/react-gh-pages",
+  "homepage": "https://kcblaq.github.io/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.8.2",

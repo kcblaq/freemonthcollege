@@ -25,6 +25,12 @@ import {
 	const [level, setLevel] = useState('');
 	const [gender, setGender] = useState('');
 	const [mydata, setData] = useState('');
+	const [active, setActive] = useState(0)
+	const [profileDetail, setProfileDetail] = useState([])
+
+	useEffect(() =>{
+		
+	})
 
 	const filter = {
 		gender,
@@ -33,6 +39,25 @@ import {
 		state,
 	};
 
+	function GetDetail() {
+
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(filter),
+			redirect: 'follow',
+		};
+		fetch(
+			`https://testapiomniswift.herokuapp.com/api/viewResult/${active}`,
+			requestOptions
+		)
+			.then((response) => response.json())
+			.then((result) => {
+				setProfileDetail(result)
+			})
+			.catch((error) => console.log('error', error));
+	}
+	console.log('Active:',profileDetail)
 
 	
 	function PostFilter() {
@@ -64,13 +89,6 @@ import {
 				setData(result.data.students);
 			});
 	}, []);
-	const Downloaddetail = (props) => {
-		const [activeUser, setActiveUser] = useState('')
-		setActiveUser(mydata.id)
-			return(
-				console.log('ActiveUser:',activeUser)
-			)
-	};
 	
 	return (
 		<Box sx={{ backgroundColor: '#E5E5E5', maxWidth: '100vw',height:'100vh', padding: 4 }}>
@@ -241,7 +259,10 @@ import {
 											<Button
 												variant="contained"
 												sx={{ backgroundColor: 'green' }}
-												onClick={() =>console.log(data.id)}>
+												onClick={() =>{
+													setActive(data.id)
+													GetDetail()
+													}}>
 												Download
 											</Button>
 										</TableCell>
