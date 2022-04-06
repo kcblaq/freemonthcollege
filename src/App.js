@@ -10,8 +10,7 @@ function App() {
 			sx={{
 				display: 'flex',
 				justifyContent: 'center',
-				backgroundColor: '#E5E5E5',
-				minHeight: '100vh',
+				backgroundColor: '#E5E5E5'
 			}}>
 			<Routes>
 				<Route path="/" element={<SearchForm />} />

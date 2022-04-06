@@ -17,7 +17,9 @@ import {
 	Paper,
 } from '@mui/material';
 
-export default function SearchForm() {
+
+
+ export default function SearchForm() {
 	const [age, setAge] = useState('');
 	const [state, setState] = useState('');
 	const [level, setLevel] = useState('');
@@ -31,6 +33,8 @@ export default function SearchForm() {
 		state,
 	};
 
+
+	
 	function PostFilter() {
 		var requestOptions = {
 			method: 'POST',
@@ -52,7 +56,7 @@ export default function SearchForm() {
 			})
 			.catch((error) => console.log('error', error));
 	}
-	const DownloadProfile = () => {};
+	
 	useEffect(() => {
 		fetch('https://testapiomniswift.herokuapp.com/api/viewAllData')
 			.then((res) => res.json())
@@ -60,8 +64,16 @@ export default function SearchForm() {
 				setData(result.data.students);
 			});
 	}, []);
+	const Downloaddetail = (props) => {
+		const [activeUser, setActiveUser] = useState('')
+		setActiveUser(mydata.id)
+			return(
+				console.log('ActiveUser:',activeUser)
+			)
+	};
+	
 	return (
-		<Box sx={{ backgroundColor: '#E5E5E5', maxWidth: '100vw', padding: 4 }}>
+		<Box sx={{ backgroundColor: '#E5E5E5', maxWidth: '100vw',height:'100vh', padding: 4 }}>
 			<Typography
 				sx={{
 					color: '#343434',
@@ -189,7 +201,7 @@ export default function SearchForm() {
 				</Box>
 			</Card>
 
-			<Card sx={{ minHeight: '40vh', overflow: 'scroll', my: 4 }}>
+			<Card sx={{ minHeight: '30vh', overflow: 'scroll', my: 4 }}>
 				<TableContainer component={Paper}>
 					<Table
 						sx={{ overflow: 'scroll' }}
@@ -229,7 +241,7 @@ export default function SearchForm() {
 											<Button
 												variant="contained"
 												sx={{ backgroundColor: 'green' }}
-												onClick={DownloadProfile}>
+												onClick={() =>console.log(data.id)}>
 												Download
 											</Button>
 										</TableCell>
@@ -242,3 +254,5 @@ export default function SearchForm() {
 		</Box>
 	);
 }
+
+// export  {Downloaddetail }
