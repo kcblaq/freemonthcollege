@@ -1,7 +1,7 @@
 {
   "name": "fremontcollege",
   "version": "0.1.0",
-  "homepage": "https://kcblaq.github.io/",
+  "homepage": "https://freemonthcollege.github.io/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.8.2",
@@ -10,6 +10,8 @@
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "latest": "^0.2.0",
     "node": "^17.7.2",
     "react": "^18.0.0",

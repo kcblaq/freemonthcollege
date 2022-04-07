@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 import {
 	Box,
 	Card,
@@ -18,7 +19,6 @@ import {
 } from '@mui/material';
 
 
-
  export default function SearchForm() {
 	const [age, setAge] = useState('');
 	const [state, setState] = useState('');
@@ -27,6 +27,8 @@ import {
 	const [mydata, setData] = useState('');
 	const [active, setActive] = useState(0)
 	const [profileDetail, setProfileDetail] = useState([])
+
+	const navigate = useNavigate()
 
 	useEffect(() =>{
 		
@@ -259,10 +261,7 @@ import {
 											<Button
 												variant="contained"
 												sx={{ backgroundColor: 'green' }}
-												onClick={() =>{
-													setActive(data.id)
-													GetDetail()
-													}}>
+												onClick={()=>navigate(`download/${data.id}`)}>
 												Download
 											</Button>
 										</TableCell>

@@ -130,7 +130,7 @@ export default function BasicModal() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {/* {data.map((row) => (
+          {/* {rows.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
                 {row.id}

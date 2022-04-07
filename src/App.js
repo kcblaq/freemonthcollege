@@ -14,7 +14,7 @@ function App() {
 			}}>
 			<Routes>
 				<Route path="/" element={<SearchForm />} />
-				<Route path="/download" element={<DownloadProfile />} />
+				<Route path="/download/:id" element={<DownloadProfile />} />
 			</Routes>
 		</Box>
 	);
